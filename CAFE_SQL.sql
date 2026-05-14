@@ -136,3 +136,16 @@ INSERT INTO CONGTHUC (MaMon, MaNL, SoLuongTieuHao) VALUES
 ('M01', 'NL01', 18), 
 ('M04', 'NL01', 20), ('M04', 'NL02', 30),
 ('M07', 'NL03', 10), ('M07', 'NL02', 40), ('M07', 'NL04', 50);
+
+CREATE TABLE NguoiDung (
+    TenDangNhap VARCHAR(50) PRIMARY KEY,
+    MatKhau VARCHAR(50),
+    VaiTro NVARCHAR(20)
+);
+INSERT INTO NguoiDung 
+VALUES 
+('admin', 'abc', 'Admin'),
+('NguyenTruongVy', '123', 'Admin'), 
+('TranNguyenAnhTuan', '456', 'Admin'), 
+('nv01', 'nv1', N'Nhân viên'),
+('nv02', 'nv2', N'Nhân viên');
