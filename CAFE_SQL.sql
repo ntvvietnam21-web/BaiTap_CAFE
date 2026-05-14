@@ -1,20 +1,4 @@
-CREATE DATABASE QL_CuaHangNuoc PRIMARY(
-	Name = QLCH_PRIMARY,
-	Filename = 'E:\LuuDuLieu\QLCH_PRIMARY.mdf',
-	Size = 15MB,
-	Maxsize = 30MB,
-	Filegrowth = 10%)
-LOG ON(
-	Name = QLCH_LOG,
-	Filename = 'E:\LuuDuLieu\QLCH_LOG.ldf',		
-	Size = 15MB,
-	Maxsize = 30MB,
-	Filegrowth = 10%);
-GO
-
-USE QL_CuaHangNuoc;
-GO
-
+CREATE DATABASE QL_CuaHangNuoc 
 
 CREATE TABLE LOAI_MON (
 	MaLoai CHAR(10) NOT NULL PRIMARY KEY,
