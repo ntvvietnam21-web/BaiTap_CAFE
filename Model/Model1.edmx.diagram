@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f392bdc95ed34b1aa13a900d1ff8c998" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="QL_CuaHangNuocModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CuaHangNuocModel.LOAI_MON" Width="1.5" PointX="4.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CuaHangNuocModel.MENU" Width="1.5" PointX="7.875" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="QL_CuaHangNuocModel.FK__MENU__MaLoai__5EBF139D" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QL_CuaHangNuocModel.NguoiDung" Width="1.5" PointX="1.375" PointY="4" />
+        <EntityTypeShape EntityType="QL_CuaHangNuocModel.CHITIET_HDB" Width="1.5" PointX="3.125" PointY="0.5" />
+        <EntityTypeShape EntityType="QL_CuaHangNuocModel.CHITIET_HDN" Width="1.5" PointX="10.5" PointY="3.625" />
+        <EntityTypeShape EntityType="QL_CuaHangNuocModel.HOADON_BAN" Width="1.5" PointX="0.75" PointY="0.875" />
+        <EntityTypeShape EntityType="QL_CuaHangNuocModel.HOADON_NHAP" Width="1.5" PointX="2.25" PointY="6.75" />
+        <EntityTypeShape EntityType="QL_CuaHangNuocModel.NHACUNGCAP" Width="1.5" PointX="5.25" PointY="6.625" />
+        <AssociationConnector Association="QL_CuaHangNuocModel.FK__CHITIET_H__MaHDB__75A278F5" />
+        <AssociationConnector Association="QL_CuaHangNuocModel.FK__CHITIET_H__MaMon__76969D2E" />
+        <AssociationConnector Association="QL_CuaHangNuocModel.FK__CHITIET_H__MaHDN__01142BA1" />
+        <AssociationConnector Association="QL_CuaHangNuocModel.FK__CHITIET_H__MaMon__02084FDA" />
+        <AssociationConnector Association="QL_CuaHangNuocModel.FK__HOADON_BA__TenDa__72C60C4A" />
+        <AssociationConnector Association="QL_CuaHangNuocModel.FK__HOADON_BAN__MaKH__71D1E811" />
+        <AssociationConnector Association="QL_CuaHangNuocModel.FK__HOADON_NH__MaNCC__7D439ABD" />
+        <AssociationConnector Association="QL_CuaHangNuocModel.FK__HOADON_NH__TenDa__7E37BEF6" />
+        <EntityTypeShape EntityType="QL_CuaHangNuocModel.CONGTHUC" Width="1.5" PointX="10" PointY="0.75" />
+        <EntityTypeShape EntityType="QL_CuaHangNuocModel.NGUYENLIEU" Width="1.5" PointX="12.125" PointY="5.75" />
+        <AssociationConnector Association="QL_CuaHangNuocModel.FK__CONGTHUC__MaMon__19DFD96B" />
+        <AssociationConnector Association="QL_CuaHangNuocModel.FK__CONGTHUC__MaNL__1AD3FDA4" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
