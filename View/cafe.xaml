@@ -1,0 +1,50 @@
+﻿<Window x:Class="Cafe.View.cafe"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cafe.View"
+        xmlns:vm="clr-namespace:Cafe.ViewModel"
+        mc:Ignorable="d"
+        Title="Hệ Thống Quản Lý Cafe" 
+        Height="700" Width="1100" 
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid Background="WhiteSmoke">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#2C3E50">
+            <Border Padding="10">
+                <StackPanel>
+                    <Ellipse Width="60" Height="60" Fill="Gray" Margin="0,10,0,10"/>
+                    <TextBlock Text="Chào bạn!" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                    <TextBlock Text="Quản trị viên" Foreground="DarkGray" HorizontalAlignment="Center" Margin="0,2,0,20"/>
+                    <Button x:Name="btnTrangChu" Click="btnTrangChu_Click_1" Content="TRANG CHỦ" Height="40" Margin="0,3" Background="#34495E" Foreground="White" BorderThickness="0" Cursor="Hand" FontSize="12"/>
+                    <Button x:Name="btnBanHang" Click="btnBanHang_Click" Content="BÁN HÀNG" Height="40" Margin="0,3" Background="#34495E" Foreground="White" BorderThickness="0" Cursor="Hand" FontSize="12"/>
+                    <Button x:Name="btnNhapHang" Click="BtnNhapHang_Click" Content="NHẬP HÀNG" Height="40" Margin="0,3" Background="#34495E" Foreground="White" BorderThickness="0" Cursor="Hand" FontSize="12"/>
+                    <Button x:Name="btnSanPham" Click="BtnSanPham_Click" Content="SẢN PHẨM" Height="40" Margin="0,3" Background="#34495E" Foreground="White" BorderThickness="0" Cursor="Hand" FontSize="12"/>
+                    <Button x:Name="btnKhachHang" Click="btnKhachHang_Click" Content="KHÁCH HÀNG" Height="40" Margin="0,3" Background="#34495E" Foreground="White" BorderThickness="0" Cursor="Hand" FontSize="12"/>
+                    <Button x:Name="btnNhanVien" Click="BtnNhanVien_Click" Content="NHÂN VIÊN" Height="40" Margin="0,3" Background="#34495E" Foreground="White" BorderThickness="0" Cursor="Hand" FontSize="12"/>
+                    <Button x:Name="btnThongKe" Click="btnThongKe_Click" Content="THỐNG KÊ KHO" Height="40" Margin="0,3" Background="#34495E" Foreground="White" BorderThickness="0" Cursor="Hand" FontSize="12"/>
+                    <Button x:Name="btnBaoCao" Click="btnBaoCao_Click" Content="XUẤT BÁO CÁO" Height="40" Margin="0,3" Background="#34495E" Foreground="White" BorderThickness="0" Cursor="Hand" FontSize="12"/>
+
+                    <Separator Margin="0,10" Background="SeaShell" Opacity="0.3"/>
+
+                    <Button x:Name="btnDangXuat" Click="btnDangXuat_Click" Content="ĐĂNG XUẤT" Height="40" Background="#E74C3C" Foreground="White" BorderThickness="0" FontWeight="Bold" Cursor="Hand" FontSize="12"/>
+                    <Button x:Name="btnThoat" Click="btnThoat_Click" Content="THOÁT" Height="40" Background="#C0392B" Foreground="White" BorderThickness="0" FontWeight="Bold" Cursor="Hand" Margin="0,5" FontSize="12"/>
+                </StackPanel>
+            </Border>
+        </Border>
+
+        <Grid Grid.Column="1">
+            <ContentControl x:Name="MainContent"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="Cafe.View.NhanVienUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cafe.View"
+             xmlns:vm="clr-namespace:Cafe.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="900">
+
+    <UserControl.DataContext>
+        <vm:NhanVienViewModel/>
+    </UserControl.DataContext>
+
+    <Border Background="WhiteSmoke" Padding="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,20">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.1"/>
+                </Border.Effect>
+
+                <StackPanel>
+                    <TextBlock Text="QUẢN LÝ NHÂN VIÊN" FontSize="22" FontWeight="Bold" Foreground="DarkSlateGray" Margin="0,0,0,20"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <TextBlock Text="Tìm tên đăng nhập:" Foreground="Gray" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
+                                 Width="250" Height="35" VerticalContentAlignment="Center" Padding="8,0"
+                                 BorderBrush="LightGray"/>
+                        <Button Content="LÀM MỚI" 
+                                Command="{Binding SearchCommand}"
+                                Width="100" Height="35" Margin="10,0,0,0"
+                                Background="Orange" Foreground="White" 
+                                FontWeight="Bold" BorderThickness="0" Cursor="Hand">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+
+                    <WrapPanel Orientation="Horizontal">
+                        <StackPanel Margin="0,0,20,10">
+                            <TextBlock Text="Tên đăng nhập" Foreground="Gray" Margin="0,0,0,5" FontSize="13"/>
+                            <TextBox Text="{Binding TenDangNhap, UpdateSourceTrigger=PropertyChanged}" 
+                                     Width="200" Height="35" VerticalContentAlignment="Center" Padding="8,0"
+                                     BorderBrush="LightGray"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,0,20,10">
+                            <TextBlock Text="Mật khẩu" Foreground="Gray" Margin="0,0,0,5" FontSize="13"/>
+                            <TextBox Text="{Binding MatKhau, UpdateSourceTrigger=PropertyChanged}" 
+                                     Width="200" Height="35" VerticalContentAlignment="Center" Padding="8,0"
+                                     BorderBrush="LightGray"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,0,20,10">
+                            <TextBlock Text="Vai trò cấp quyền" Foreground="Gray" Margin="0,0,0,5" FontSize="13"/>
+                            <ComboBox ItemsSource="{Binding ListVaiTro}" 
+                                      SelectedItem="{Binding VaiTroDuocChon}"
+                                      Width="180" Height="35" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0" VerticalAlignment="Top">
+                            <Button Content="THÊM MỚI" 
+                                    Command="{Binding AddCommand}"
+                                    Width="110" Height="38" Margin="0,0,10,0"
+                                    Background="Green" Foreground="White" 
+                                    FontWeight="Bold" BorderThickness="0" Cursor="Hand">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+
+                            <Button Content="SỬA" 
+                                    Command="{Binding EditCommand}"
+                                    Width="110" Height="38" Margin="0,0,10,0"
+                                    Background="DarkOrange" Foreground="White" 
+                                    FontWeight="Bold" BorderThickness="0" Cursor="Hand">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+
+                            <Button Content="XÓA" 
+                                    Command="{Binding DeleteCommand}"
+                                    Width="110" Height="38" Margin="0,0,0,0"
+                                    Background="Red" Foreground="White" 
+                                    FontWeight="Bold" BorderThickness="0" Cursor="Hand">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </WrapPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="1" Background="White" CornerRadius="10" Padding="10">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.1"/>
+                </Border.Effect>
+
+                <DataGrid ItemsSource="{Binding ListNhanVien}" 
+                          SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                          AutoGenerateColumns="False" 
+                          IsReadOnly="True" 
+                          Background="White"
+                          BorderThickness="0"
+                          GridLinesVisibility="None"
+                          RowHeight="45"
+                          CanUserAddRows="False"
+                          HeadersVisibility="Column"
+                          SelectionMode="Single">
+
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="DarkSlateGray"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Padding" Value="15,10"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+                            <Setter Property="BorderBrush" Value="SlateGray"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Tên Đăng Nhập" Binding="{Binding TenDangNhap}" Width="250"/>
+                        <DataGridTextColumn Header="Mật Khẩu" Binding="{Binding MatKhau}" Width="250"/>
+                        <DataGridTextColumn Header="Vai Trò" Binding="{Binding VaiTro}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>
